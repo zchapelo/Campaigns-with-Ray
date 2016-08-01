@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Campaigns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Outbound</th>
+      <th>Number</th>
+      <th>Import</th>
+      <th>Blocklists</th>
+      <th>Add</th>
+      <th>To</th>
+      <th>Blocklist</th>
+      <th>Delivery</th>
+      <th>Messages</th>
+      <th>Confirm</th>
+      <th>Confirm</th>
+      <th>Api</th>
+      <th>Url</th>
+      <th>Unsubscribe</th>
+      <th>Blocklist</th>
+      <th>Api</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @campaigns.each do |campaign| %>
+      <tr>
+        <td><%= campaign.Name %></td>
+        <td><%= campaign.Description %></td>
+        <td><%= campaign.Outbound %></td>
+        <td><%= campaign.Number %></td>
+        <td><%= campaign.Import %></td>
+        <td><%= campaign.Blocklists %></td>
+        <td><%= campaign.Add %></td>
+        <td><%= campaign.to %></td>
+        <td><%= campaign.Blocklist %></td>
+        <td><%= campaign.Delivery %></td>
+        <td><%= campaign.Messages %></td>
+        <td><%= campaign.Confirm %></td>
+        <td><%= campaign.Confirm %></td>
+        <td><%= campaign.API %></td>
+        <td><%= campaign.URL %></td>
+        <td><%= campaign.Unsubscribe %></td>
+        <td><%= campaign.Blocklist %></td>
+        <td><%= campaign.API %></td>
+        <td><%= campaign.URL %></td>
+        <td><%= link_to 'Show', campaign %></td>
+        <td><%= link_to 'Edit', edit_campaign_path(campaign) %></td>
+        <td><%= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Campaign', new_campaign_path %>

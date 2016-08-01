@@ -1,0 +1,78 @@
+<%= form_for(@campaign) do |f| %>
+  <% if @campaign.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
+
+      <ul>
+      <% @campaign.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"Campaign Name" %><br>
+    <%= f.text_field :Name %>
+  </div>
+  <div class="field">
+    <%= f.label :Description %><br>
+    <%= f.text_area :Description, rows: 4 %>
+  </div>
+  <div class="field">
+    <%= f.label :"Outbound Number" %><br>
+    <%= f.text_field :Outbound %>
+  </div>
+  <div class="field">
+    <%= f.label :"Import Blocklists"%><br>
+    <%= f.text_field :Import %>
+
+    <%= check_box_tag(:text_message) %>
+    <%= label_tag(:text_message, "Text Message") %>
+    <%= check_box_tag(:voice_call) %>
+    <%= label_tag(:voice_call, "Voice Call") %>
+    <%= check_box_tag(:text_fail) %>
+    <%= label_tag(:text_fail, "Voice Call (On Text Failure)") %>
+    <%= check_box_tag(:e_mail) %>
+    <%= label_tag(:e_mail, "E-Mail") %>
+  </div>
+  <div class="field">
+    <%= f.label :"Add to Blocklist" %><br>
+    <%= f.text_field :Add %>
+  </div>
+  <div class="field">
+    <%= f.label :Delivery %><br>
+    <%= f.text_field :Delivery %>
+  </div>
+  <div class="field">
+    <%= f.label :Messages %><br>
+    <%= f.text_area :Messages, rows: 6 %>
+  </div>
+  <div class="field">
+    <%= f.label :Confirm %><br>
+    <%= f.text_field :Confirm %>
+  </div>
+  <div class="field">
+    <%= f.label :"Confirm API URL" %><br>
+    <%= f.text_field :Confirm %>
+  </div>
+  <div class="field">
+    <%= f.label :Unsubscribe %><br>
+    <%= f.text_field :Unsubscribe %>
+  </div>
+  <div class="field">
+    <%= f.label :Blocklist %><br>
+    <%= f.text_field :Blocklist %>
+  </div>
+  <div class="field">
+    <%= f.label :API %><br>
+    <%= f.text_field :API %>
+  </div>
+  <div class="field">
+    <%= f.label :ball %><br>
+    <%= f.text_field :URL %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
